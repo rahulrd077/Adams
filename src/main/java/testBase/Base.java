@@ -1,6 +1,7 @@
 package testBase;
 
 import java.io.FileInputStream;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 
@@ -10,7 +11,9 @@ public class Base {
  
  public static FileInputStream file ;
  
- public Base() {
+ public static Properties prop ;
+ 
+ public Base() throws Exception{
 	 
 	 try {
 	 file = new FileInputStream ("") ;
@@ -22,6 +25,14 @@ public class Base {
 		 e.printStackTrace();
 	 }
 	 
+	 prop = new Properties();
+	 
+	 prop.load(file);
+	 
+ }
+ 
+ 
+ public static void InitializingBase() {
 	 
 	 
  }
